@@ -1,0 +1,12 @@
+--- src/nsimage.m.orig
++++ src/nsimage.m
+@@ -74,7 +74,9 @@
+     imageType = @"com.compuserve.gif";
+   else if (EQ (type, Qtiff))
+     imageType = @"public.tiff";
++#ifndef HAVE_RSVG
+   else if (EQ (type, Qsvg))
+     imageType = @"public.svg-image";
++#endif
+   else if (EQ (type, Qheic))
+     imageType = @"public.heic";
